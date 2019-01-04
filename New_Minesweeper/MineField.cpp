@@ -208,7 +208,7 @@ void MineField::ChangePlayerPos(short x,short y)//возвращает курсор на позицию х
 int MineField::CheckNeighboringMines(int x,int y)//провер€ет количество бомб вокруг €чейки
 {
 	int num=0;
-	for(int i=-1;i<=1;++i)//двум€ циклами проходим соседние бомбы
+	for(int i=-1;i<=1;++i) // двум€ циклами проходим соседние бомбы
 		for(int j=-1;j<=1;++j)
 			if(OnField(x+i,y+j)&&field[y+j][x+i].HasBomb())
 				++num;
