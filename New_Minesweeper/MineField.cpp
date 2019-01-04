@@ -245,18 +245,18 @@ void MineField::EndGameFailure()//неуспешное окончание игры
 			if(field[j][i].HasBomb())//если есть бомба
 			{
 				ChangePlayerPos(i*2+1,j*2+1);
-				if(field[j][i].GetCurState()==0)//если неотмечена
+				if(field[j][i].GetCurState()==0) // если неотмечена
 				{
 					SetColor(4,15);
 					cout<<"\x06";
 				}
-				else if(field[j][i].GetCurState()==1)//если отмечена
+				else if(field[j][i].GetCurState()==1) // если отмечена
 				{
 					SetColor(15,2);
 					cout<<"\x18";
 				}
 			}
-			else if(field[j][i].GetCurState()==1)//если нет бомбы, но отмечена
+			else if(field[j][i].GetCurState()==1) // если нет бомбы, но отмечена
 			{
 				ChangePlayerPos(i*2+1,j*2+1);
 				SetColor(15,4);
@@ -267,14 +267,14 @@ void MineField::EndGameFailure()//неуспешное окончание игры
 	cout<<"You lose";
 	getch();
 }
-void MineField::EndGameSuccess()//успешное окончание игры
+void MineField::EndGameSuccess() // успешное окончание игры
 {
 	for(int i=0;i<width;++i)
 		for(int j=0;j<height;++j)
-			if(field[j][i].HasBomb())//если есть бомба
+			if(field[j][i].HasBomb()) // если есть бомба
 			{
 				ChangePlayerPos(i*2+1,j*2+1);
-				if(field[j][i].GetCurState()==0)//если неотмечена
+				if(field[j][i].GetCurState()==0) // если неотмечена
 				{
 					SetColor(2,15);
 					cout<<"\x06";
